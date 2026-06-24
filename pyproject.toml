@@ -1,0 +1,12 @@
+[project]
+name = "protex-ai-takehome"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "opencv-python>=4.13.0.92",
+    "python-dotenv>=1.2.2",
+    "requests>=2.34.2",
+    "shapely>=2.1.2",
+]

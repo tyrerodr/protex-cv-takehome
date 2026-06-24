@@ -1,0 +1,19 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+*.pyc
+
+# Virtual environments
+.venv
+.venv/
+.env
+
+outputs/*.mp4
+outputs/*.json
+
+.DS_Store
+.vscode/
