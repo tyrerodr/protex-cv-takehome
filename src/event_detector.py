@@ -33,8 +33,8 @@ def detect_person_car_events(
             roi_points=roi_points,
         )
 
-        has_person = "Person" in classes_inside_roi
-        has_car = "Car" in classes_inside_roi
+        has_person = "person" in classes_inside_roi
+        has_car = "car" in classes_inside_roi
 
         if has_person and has_car:
             events.append(

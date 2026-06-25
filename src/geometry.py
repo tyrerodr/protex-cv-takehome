@@ -7,7 +7,7 @@ def fractional_bbox_to_pixels(
     frame_width: int,
     frame_height: int,
 ) -> tuple[int, int, int, int]:
-    x, y, width, height = bbox
+    x, y, width, height = extract_bbox_values(bbox)
 
     return (
         int(x * frame_width),
@@ -36,6 +36,16 @@ def is_point_inside_roi(
 
     return polygon.contains(shapely_point) or polygon.touches(shapely_point)
 
+def extract_bbox_values(bbox: list[float] | dict[str, float]) -> tuple[float, float, float, float]:
+    if isinstance(bbox, dict):
+        return (
+            bbox["left"],
+            bbox["top"],
+            bbox["width"],
+            bbox["height"],
+        )
+
+    return tuple(bbox) 
 
 def enrich_detection_with_position(
     detection: dict[str, Any],

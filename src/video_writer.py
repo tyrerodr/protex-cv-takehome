@@ -4,7 +4,6 @@ from typing import Any
 import cv2
 
 from config import (
-    CAMERA_NAME,
     CANVAS_HEIGHT,
     CANVAS_WIDTH,
     OUTPUT_FPS,
@@ -42,11 +41,11 @@ def generate_visualization_video(
     video_writer = create_video_writer(output_path)
     all_events: list[dict[str, Any]] = []
 
-    for frame in annotations:
-        frame_num = frame["Frame_num"]
-        timestamp = frame["Timestamp"]
-        frame_width = frame["Frame_width"]
-        frame_height = frame["Frame_height"]
+    for frame in annotations["frames"]:
+        frame_num = frame["frame_num"]
+        timestamp = frame["timestamp"]
+        frame_width = frame["frame_width"]
+        frame_height = frame["frame_height"]
 
         enriched_detections = [
             enrich_detection_with_position(
@@ -63,7 +62,7 @@ def generate_visualization_video(
             timestamp=timestamp,
             frame_num=frame_num,
             rule_name=RULE_NAME,
-            camera_name=CAMERA_NAME,
+            camera_name=annotations["cam_name"],
         )
 
         all_events.extend(events)

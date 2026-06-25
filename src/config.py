@@ -3,7 +3,6 @@ CANVAS_HEIGHT = 1080
 OUTPUT_FPS = 5
 
 RULE_NAME = "Person and Car inside ROI"
-CAMERA_NAME = "Logistics Camera 01"
 
 PERSON_CAR_ROIS = {
     "Person Car Region of Interest 1": [

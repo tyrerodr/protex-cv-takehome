@@ -6,9 +6,9 @@ import numpy as np
 from config import CANVAS_HEIGHT, CANVAS_WIDTH
 
 CLASS_COLORS = {
-    "Person": (0, 255, 0), #Green
-    "Car": (255, 0, 0), #Blue
-    "Truck": (180, 180, 180), #Gray
+    "person": (0, 255, 0), #Green
+    "car": (255, 0, 0), #Blue
+    "truck": (180, 180, 180), #Gray
 }
 
 DEFAULT_COLOR = (255, 255, 255) #White

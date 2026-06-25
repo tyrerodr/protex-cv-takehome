@@ -4,11 +4,11 @@ from event_detector import detect_person_car_events
 def test_detects_person_and_car_inside_same_roi() -> None:
     detections = [
         {
-            "class": "Person",
+            "class": "person",
             "point": (100, 100),
         },
         {
-            "class": "Car",
+            "class": "car",
             "point":  (200, 200)
         },
     ]
