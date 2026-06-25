@@ -1,5 +1,6 @@
 from typing import Any
 
+
 def format_event_as_slack_message(event: dict[str, Any]) -> dict[str, Any]:
     camera_name = event["camera_name"]
     rule_name = event["rule_name"]
@@ -14,32 +15,17 @@ def format_event_as_slack_message(event: dict[str, Any]) -> dict[str, Any]:
                 "type": "header",
                 "text": {
                     "type": "plain_text",
-                    "text": "Safety Event Detected"
+                    "text": "Safety Event Detected",
                 },
             },
             {
                 "type": "section",
                 "fields": [
-                    {
-                        "type": "mrkdwn",
-                        "text": f"*Camera:*\n{camera_name}",
-                    },
-                    {
-                        "type": "mrkdwn",
-                        "text": f"*Rule:*\n{rule_name}",
-                    },
-                    {
-                        "type": "mrkdwn",
-                        "text": f"*ROI:*\n{roi_name}",
-                    },
-                    {
-                        "type": "mrkdwn",
-                        "text": f"*Frame:*\n{frame_num}",
-                    },
-                    {
-                        "type": "mrkdwn",
-                        "text": f"*Timestamp:*\n{timestamp}",
-                    },
+                    {"type": "mrkdwn", "text": f"*Camera:*\n{camera_name}"},
+                    {"type": "mrkdwn", "text": f"*Rule:*\n{rule_name}"},
+                    {"type": "mrkdwn", "text": f"*ROI:*\n{roi_name}"},
+                    {"type": "mrkdwn", "text": f"*Frame:*\n{frame_num}"},
+                    {"type": "mrkdwn", "text": f"*Timestamp:*\n{timestamp}"},
                 ],
             },
         ],

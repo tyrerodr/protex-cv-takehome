@@ -2,8 +2,23 @@ from typing import Any
 
 from shapely.geometry import Point, Polygon
 
+def extract_bbox_values(
+    bbox: list[float] | dict[str, float],
+) -> tuple[float, float, float, float]:
+    if isinstance(bbox, dict):
+        return (
+            bbox["left"],
+            bbox["top"],
+            bbox["width"],
+            bbox["height"],
+        )
+
+    x, y, width, height = bbox
+    return x, y, width, height
+
+
 def fractional_bbox_to_pixels(
-    bbox: list[float],
+    bbox: list[float] | dict[str, float],
     frame_width: int,
     frame_height: int,
 ) -> tuple[int, int, int, int]:
@@ -15,6 +30,7 @@ def fractional_bbox_to_pixels(
         int(width * frame_width),
         int(height * frame_height),
     )
+
 
 def get_bbox_bottom_center(
     bbox_pixels: tuple[int, int, int, int],
@@ -36,17 +52,6 @@ def is_point_inside_roi(
 
     return polygon.contains(shapely_point) or polygon.touches(shapely_point)
 
-def extract_bbox_values(bbox: list[float] | dict[str, float]) -> tuple[float, float, float, float]:
-    if isinstance(bbox, dict):
-        return (
-            bbox["left"],
-            bbox["top"],
-            bbox["width"],
-            bbox["height"],
-        )
-
-    return tuple(bbox) 
-
 def enrich_detection_with_position(
     detection: dict[str, Any],
     frame_width: int,
@@ -62,6 +67,7 @@ def enrich_detection_with_position(
 
     return {
         **detection,
+        "class": detection["class"].lower(),
         "bbox_pixels": bbox_pixels,
         "point": point,
     }
