@@ -2,7 +2,7 @@ from geometry import enrich_detection_with_position
 
 def test_enrich_detection_with_bottom_center_position():
     detection = {
-        "label": "Person",
+        "class": "Person",
         "bbox": [100, 200, 300, 500],
     }
 
