@@ -3,7 +3,9 @@ from typing import Any
 from pprint import pprint
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
+from dotenv import load_dotenv
 
+load_dotenv()
 
 def create_slack_client() -> WebClient | None:
     slack_bot_token = os.getenv("SLACK_BOT_TOKEN")
