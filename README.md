@@ -1,4 +1,4 @@
-# Protex AI CV Engineering Take-Home
+# Safety Event Detection
 
 ## Project Overview
 
@@ -12,7 +12,7 @@ The assignment includes two main parts:
 
 ## Project Structure
 ```bash
-protex-cv-take-home/
+cv-safety-event-detection/
 │
 ├── data/
 │   └── annotations.json
@@ -41,8 +41,8 @@ protex-cv-take-home/
 
 1. Clone the repository
 ```bash
-git clone https://github.com/tyrerodr/protex-cv-takehome.git
-cd protex-cv-takehome
+git clone https://github.com/tyrerodr/cv-safety-event-detection.git
+cd cv-safety-event-detection
 ```
 
 2. Install dependencies

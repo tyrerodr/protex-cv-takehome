@@ -1,5 +1,5 @@
 [project]
-name = "protex-ai-takehome"
+name = "cv-safety-event-detection"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"

@@ -145,7 +145,7 @@ wheels = [
 ]
 
 [[package]]
-name = "protex-ai-takehome"
+name = "cv-safety-event-detection"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
